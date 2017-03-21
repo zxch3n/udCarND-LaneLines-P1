@@ -12041,7 +12041,7 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.image.AxesImage at 0x16b9be34b00&gt;</pre>
+<pre>&lt;matplotlib.image.AxesImage at 0x27077785b00&gt;</pre>
 </div>
 
 </div>
@@ -13930,7 +13930,7 @@ AElFTkSuQmCC
     <span class="c1"># sorted by length</span>
     <span class="n">lines</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
     
-    <span class="c1"># remove lines that conflict with the longest line</span>
+    <span class="c1"># remove lines that conflict with longer line</span>
     <span class="n">remove</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)):</span>
         <span class="n">lines</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">remove</span><span class="p">]</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
@@ -14005,17 +14005,6 @@ AElFTkSuQmCC
     <span class="n">line_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
     <span class="n">draw_lines</span><span class="p">(</span><span class="n">line_img</span><span class="p">,</span> <span class="p">[</span><span class="n">mean_lines</span><span class="p">],</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">img</span><span class="p">,</span> <span class="n">line_img</span>
-    
-<span class="k">def</span> <span class="nf">_test_find_lanes</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">prestate</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">img</span> <span class="o">=</span> <span class="n">filepath</span>
-    <span class="n">edge</span> <span class="o">=</span> <span class="n">get_edge</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">get_lines</span><span class="p">(</span><span class="n">edge</span><span class="p">)]</span>
-    <span class="n">line_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-    <span class="n">draw_lines</span><span class="p">(</span><span class="n">line_img</span><span class="p">,</span> <span class="p">[</span><span class="n">lines</span><span class="p">],</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">line_img</span>
 </pre></div>
 
 </div>
@@ -36969,7 +36958,7 @@ imageio.plugins.ffmpeg.download()</code></pre>
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|█████████████████████████████████████████████████████████████████████████████████████████████████████▌| 221/222 [00:06&lt;00:00, 32.22it/s]
+<pre>100%|█████████████████████████████████████████████████████████████████████████████████████████████████████▌| 221/222 [00:07&lt;00:00, 31.10it/s]
 </pre>
 </div>
 </div>
@@ -36979,7 +36968,7 @@ imageio.plugins.ffmpeg.download()</code></pre>
 <pre>[MoviePy] Done.
 [MoviePy] &gt;&gt;&gt;&gt; Video ready: test_videos_output/solidWhiteRight.mp4 
 
-Wall time: 7.5 s
+Wall time: 7.73 s
 </pre>
 </div>
 </div>
@@ -37085,7 +37074,7 @@ Wall time: 7.5 s
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|█████████████████████████████████████████████████████████████████████████████████████████████████████▊| 681/682 [00:20&lt;00:00, 33.41it/s]
+<pre>100%|█████████████████████████████████████████████████████████████████████████████████████████████████████▊| 681/682 [00:21&lt;00:00, 31.76it/s]
 </pre>
 </div>
 </div>
@@ -37095,7 +37084,7 @@ Wall time: 7.5 s
 <pre>[MoviePy] Done.
 [MoviePy] &gt;&gt;&gt;&gt; Video ready: test_videos_output/solidYellowLeft.mp4 
 
-Wall time: 21.1 s
+Wall time: 22.1 s
 </pre>
 </div>
 </div>
@@ -37190,7 +37179,7 @@ Wall time: 21.1 s
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 251/251 [00:14&lt;00:00, 17.74it/s]
+<pre>100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 251/251 [00:13&lt;00:00, 17.54it/s]
 </pre>
 </div>
 </div>
@@ -37200,7 +37189,7 @@ Wall time: 21.1 s
 <pre>[MoviePy] Done.
 [MoviePy] &gt;&gt;&gt;&gt; Video ready: test_videos_output/challenge.mp4 
 
-Wall time: 15.7 s
+Wall time: 15.1 s
 </pre>
 </div>
 </div>

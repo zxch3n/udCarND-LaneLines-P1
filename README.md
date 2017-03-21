@@ -81,10 +81,14 @@ Another shortcoming could be this algorithm can not regocnize all the lane lines
 
 Third the algorithm is not robust enough to detect the lane when the lane lines figure is fuzzy. The only thing it can do when the detection is not convincing is to predict the lane lines based on the previous lane lines data.
 
+Fourth the lane lines this algorithm detected exceed the actual lane lines.
+
 Last the algorithm is not fast.
 
 ###3. Suggest possible improvements to your pipeline
 
 A possible improvement would be to change lane lines predict algorithm. When the one of the lane line detection result is not convincing, we can also use the other lane line to predict this one's change.
+
+Second improvement is to come up with an method to avoid the resualt lane lines exceed the actual ones.
 
 Another potential improvement could be to reconstruct the algorithm to optimize the speed.
