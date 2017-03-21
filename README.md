@@ -1,4 +1,4 @@
-#**Finding Lane Lines on the Road** 
+# **Finding Lane Lines on the Road** 
 
 
 The goals / steps of this project are the following:
@@ -14,7 +14,7 @@ The goals / steps of this project are the following:
 
 ## Reflection
 
-###1. Pipeline
+### 1. Pipeline
 
 Let the solidWhiteCurve image as example. I'll demonstrate how my pipeline work.
 
@@ -73,7 +73,7 @@ Finally we draw the image by the lines we dectected.
 ![](writeup_img/final.jpg)
 
 
-###2. Potential shortcomings
+### 2. Potential shortcomings
 
 One potential shortcoming would be it can not detect the lane when the car is perpendicular to the lane or the lane is out of the region of interest I defined.
 
@@ -85,7 +85,7 @@ Fourth the lane lines this algorithm detected exceed the actual lane lines.
 
 Last the algorithm is not fast.
 
-###3. Suggest possible improvements to your pipeline
+### 3. Suggest possible improvements to your pipeline
 
 A possible improvement would be to change lane lines predict algorithm. When the one of the lane line detection result is not convincing, we can also use the other lane line to predict this one's change.
 
